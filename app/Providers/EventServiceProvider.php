@@ -28,7 +28,8 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Add this breaks asset moving
+        // Adding this breaks asset moving
+        // "Undefined array key listener"
         Event::listen(function (EntrySaved $event) {
             \Log::info('EntrySaved. Handle: ' . $event->entry->collectionHandle());
         });
